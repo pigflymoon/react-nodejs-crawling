@@ -1,3 +1,7 @@
+//Notice the initial state object we set on the window.
+// Our last change would be to spread this initial state object
+// on our `browser.js` file and into our root component and
+// have the client and server initial state match
 export default ({ body, title, initialState }) => {
   return `
     <!DOCTYPE html>

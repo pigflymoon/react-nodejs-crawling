@@ -45,11 +45,6 @@ server.get('/', (req, res) => {
                     console.log('price', price)
                     if (price < 100) {
                         priceItemCount++;
-                        priceItems['price'] = price;
-                        priceItems['title'] = title;
-                        priceItems['url'] = url;
-                        // priceItems.push(url);
-
                         priceItems.push({
                             title: title,
                             price: price,
@@ -61,12 +56,13 @@ server.get('/', (req, res) => {
             })
 
 
-
         });
 
         // const isMobile = true;
         const itemList = priceItems
         const initialState = {searchKey, itemList};
+        //We’re start by creating an `initialState` object and spreading
+        // that to our root component and pass it down to our template.
         const appString = renderToString(<App {...initialState} />);
 
         res.send(template({
